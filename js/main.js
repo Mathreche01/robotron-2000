@@ -1,5 +1,7 @@
 const controle = document.querySelectorAll('[data-controle]');
 const estatisticas = document.querySelectorAll('[data-estatistica');
+const robotron = document.querySelector('.robo');
+const cores = ["Azul", "Amarelo", "Preto", "Branco", "Rosa", "Vermelho"];
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -54,3 +56,15 @@ function atualizaEstatisticas(peca){
     }
     )
 }
+
+let i = 1;
+function trocaImagem(){
+    if(i < cores.length){
+    let cor = cores[i]
+    document.querySelector(".robo").src="img/Robotron 2000 - " + cor + ".png";
+    return i++;
+    } else{
+        document.querySelector(".robo").src="img/Robotron 2000 - " + cores[0] + ".png"
+        return i = 1;
+    }
+ }
